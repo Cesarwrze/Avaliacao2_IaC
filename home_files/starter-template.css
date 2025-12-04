@@ -1,0 +1,15 @@
+body {
+  padding-top: 5rem;
+  background-image: url('/prototipo/assets/img/thumbnail_logo_TSI_opaca.png'); /* Caminho atualizado */
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página */
+  background-position: right bottom; /* Posiciona a imagem no canto inferior direito */
+  position: relative; /* Necessário para outros estilos */
+}
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  position: relative; /* Para garantir que o conteúdo seja exibido acima da sobreposição */
+  z-index: 1; /* Coloca o conteúdo acima da sobreposição */
+}
