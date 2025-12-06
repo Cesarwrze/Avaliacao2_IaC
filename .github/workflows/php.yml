@@ -1,8 +1,5 @@
-# This is a basic workflow to help you get started with Actions
+name: Avaliacao 2 Iac
 
-name: Primeiro workflow PHP
-
-# Controls when the workflow will run
 on:
   push:
     branches: [ "main" ]
@@ -10,17 +7,14 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
-     
       - name: Instalar PHP
         run: |
           sudo apt-get update
@@ -29,10 +23,5 @@ jobs:
       - name: Verificar versão do PHP
         run: php -v
 
-   
-      - name: Executar script PHP
-        run: php calc.php
-
-    
-      - name: Finalizado
-        run: echo "Execução do script PHP concluída com sucesso!"
+      - name: Validar sintaxe
+        run: find . -name "*.php" -print0 | xargs -0 -n1 php -l
